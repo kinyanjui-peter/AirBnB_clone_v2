@@ -8,7 +8,7 @@
     """
 from flask import Flask
 #instance of Flask
-app = Flask("__main__")
+app = Flask(__main__)
 
 @app.route('/' , strict_slashes=False)
 def func_to_display():
