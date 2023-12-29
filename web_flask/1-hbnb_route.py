@@ -10,10 +10,10 @@ from flask import Flask
 #instance of Flask
 app = Flask("__main__")
 
-@app.route('/display')
+@app.route('/display' , strict_slashes=False)
 def func_to_display():
     return "Hello HBNB!"
-@app.route('/hbnb/', strict_slashes=False)
+@app.route('/hbnb/' , strict_slashes=False)
 def func_to_hbnb():
     return "HBNB"
 
