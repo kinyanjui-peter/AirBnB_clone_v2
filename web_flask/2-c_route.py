@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """script that starts a Flask web application:
     our web application must be listening on 0.0.0.0, port 5000
     Routes:
@@ -32,8 +32,6 @@ def func_to_c(text):
     route to route and a text vallue added
     """
     return "C " + text
-
-
 
 #prevent script from running if called#
 if __name__ == "__main__":
