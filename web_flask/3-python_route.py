@@ -15,8 +15,8 @@ import re
 #instance of Flask
 app = Flask("__name__")
 
-#defalt values
-text = "is cool"
+#default values
+default_text = "is cool"
 @app.route('/' , strict_slashes=False)
 def func_to_display():
     """
@@ -34,7 +34,7 @@ def func_to_hbnb():
     """
     return "HBNB"
 @app.route('/c/<text>', strict_slashes=False)
-def func_to_c(text):
+def func_to_c(text=dafault_text):
     """
     route to route and a text vallue added
     """
@@ -44,7 +44,7 @@ def func_to_c(text):
     """ 
     return "C " + underscore_text
 @app.route('/python/<text>')
-def display_python(text):
+def display_python(text=default_text):
     """function that display python"""
     undescore_text = re.sub(r'_',' ', test)
     return "python" + underscore_text
