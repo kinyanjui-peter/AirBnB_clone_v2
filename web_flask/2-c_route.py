@@ -31,11 +31,11 @@ def func_to_c(text):
     """
     route to route and a text vallue added
     """
-    underscore_text = re.sub(r'_', ' ', text)
+    #underscore_text = re.sub(r'_', ' ', text)
     """
     replace underscore wiith a space
     """ 
-    return "C " + underscore_text
+    return "C " + text
 
 #prevent script from running if called#
 if __name__ == "__main__":
