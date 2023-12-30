@@ -13,10 +13,10 @@
 from flask import Flask
 import re
 #instance of Flask
-app = Flask("__name__")
+app = Flask(__name__)
 
 #default values
-default_text = "is cool"
+def_text = "is cool"
 @app.route('/' , strict_slashes=False)
 def func_to_display():
     """
@@ -33,8 +33,9 @@ def func_to_hbnb():
     the URL works when it ends both with or without the /
     """
     return "HBNB"
+
 @app.route('/c/<text>', strict_slashes=False)
-def func_to_c(text=default_text):
+def func_to_c(text):
     """
     route to route and a text vallue added
     """
@@ -42,12 +43,13 @@ def func_to_c(text=default_text):
     """
     replace underscore wiith a space
     """ 
-    return "C " + underscore_text
+    return f"C {underscore_text}"
+
 @app.route('/python/<text>', strict_slashes=False)
-def display_python(text=default_text):
+def display_python(text=def_text):
     """function that display python"""
-    underscore_text = re.sub(r'_',' ', test)
-    return "python" + underscore_text
+    underscore_text = re.sub(r'_',' ', text)
+    return f"Python {underscore_text}"
 
 #prevent script from running if called#
 if __name__ == "__main__":
