@@ -43,7 +43,7 @@ def func_to_c(text=default_text):
     replace underscore wiith a space
     """ 
     return "C " + underscore_text
-@app.route('/python/<text>')
+@app.route('/python/<text>', strict_slashes=False)
 def display_python(text=default_text):
     """function that display python"""
     underscore_text = re.sub(r'_',' ', test)
