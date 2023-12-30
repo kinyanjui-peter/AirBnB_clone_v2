@@ -34,7 +34,7 @@ def func_to_hbnb():
     """
     return "HBNB"
 @app.route('/c/<text>', strict_slashes=False)
-def func_to_c(text=dafault_text):
+def func_to_c(text=default_text):
     """
     route to route and a text vallue added
     """
@@ -46,9 +46,8 @@ def func_to_c(text=dafault_text):
 @app.route('/python/<text>')
 def display_python(text=default_text):
     """function that display python"""
-    undescore_text = re.sub(r'_',' ', test)
+    underscore_text = re.sub(r'_',' ', test)
     return "python" + underscore_text
-
 
 #prevent script from running if called#
 if __name__ == "__main__":
