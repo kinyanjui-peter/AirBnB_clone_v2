@@ -31,7 +31,8 @@ def func_to_c(text):
     """
     route to route and a text vallue added
     """
-    return "C " + text
+    underscore_text = re.sub(r'_', ' ', text)
+    return "C " + underscore_text
 
 #prevent script from running if called#
 if __name__ == "__main__":
