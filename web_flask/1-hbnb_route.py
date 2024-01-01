@@ -5,7 +5,7 @@
     /: display “Hello HBNB!”
     /hbnb: display “HBNB”
     You must use the option strict_slashes=False in your route definition
-    """
+code    """
 from flask import Flask
 
 #instance of Flask

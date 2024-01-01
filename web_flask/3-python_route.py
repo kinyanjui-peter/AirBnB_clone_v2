@@ -39,17 +39,18 @@ def func_to_c(text):
     """
     route to route and a text vallue added
     """
-    underscore_text = re.sub(r'_', ' ', text)
+    text = text.replace('_',' ')
     """
     replace underscore wiith a space
     """ 
-    return f"C {underscore_text}"
+    return "C {}". format (text)
 
+@app.route('/python/', defaults={'text' : 'is_cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def display_python(text=def_text):
+def display_python(text):
     """function that display python"""
-    underscore_text = re.sub(r'_',' ', text)
-    return f"Python {underscore_text}"
+    text = text.replace('_',' ')
+    return "Python {}". format(text)
 
 #prevent script from running if called#
 if __name__ == "__main__":
