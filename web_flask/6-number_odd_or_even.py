@@ -79,13 +79,10 @@ def number_template_func(n):
 
 # prints even or odd number
 @app.route('/number_odd_or_even/<n>', strict_slashes=True)
-def number_odd_or_even_func(n):
+def number_odd_or_even_func(n=None):
     """prints odd or even"""
-    try:
-        n = int(n)
-        return render_template('templates/6-number_odd_or_even.html', n=n)
-    except ValueError:
-        return "", 404
+    """ render HTML code """
+    return render_template('templates/6-number_odd_or_even.html', n=n)
 
 
 # prevent script from running if called#
