@@ -10,7 +10,7 @@
     The default value of text is “is cool”
     You must use the option strict_slashes=False in your route definition  
     """
-from flask import Flask
+from flask import Flask, render_template
 import re
 #instance of Flask
 app = Flask(__name__)
@@ -55,11 +55,21 @@ def display_python(text):
 @app.route('/number/<n>', strict_slashes=False)
 def display_n(n):
     """ A function that displays a number if its an integer"""
-    if isinstance(n, int):
+    try:
+        n = int(n)
         """check if the number is int"""
-        return "its interger: {}". format(n)
-    else:
-        return ("")
+        return "{}". format(n)
+    except ValueError:
+            return "", 404
+
+@app.route('/number_template/<n>', strict_slashes=False)
+def number_template_func(n):
+    """ a function that displays a HTML page if n is an interger"""
+    try:
+        n = int(n)
+        return render_template('5-number.html', n=n)
+    except ValueError:
+        return "", 404
 
 #prevent script from running if called#
 if __name__ == "__main__":
