@@ -26,6 +26,7 @@ def func_to_hbnb():
     the URL works when it ends both with or without the /
     """
     return "HBNB"
+
 @app.route('/c/<text>', strict_slashes=False)
 def func_to_c(text):
     """

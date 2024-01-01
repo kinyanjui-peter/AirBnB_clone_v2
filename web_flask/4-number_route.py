@@ -55,11 +55,12 @@ def display_python(text):
 @app.route('/number/<n>', strict_slashes=False)
 def display_n(n):
     """ A function that displays a number if its an integer"""
-    if isinstance(n, int):
+    try:
+        n = int(n)
         """check if the number is int"""
-        return "its interger: {}". format(n)
-    else:
-        return ("")
+        return "{}". format(n)
+    except ValueError:
+            return "", 404
 
 #prevent script from running if called#
 if __name__ == "__main__":
