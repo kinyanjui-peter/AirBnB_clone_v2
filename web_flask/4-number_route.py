@@ -54,10 +54,10 @@ def display_python(text=):
 
 @app.route('/number/<n>', strict_slashes=False)
 def display_n(n):
-    if isinstance(int, n) == True:
+    if isinstance(int, n):
         return "{}".format(n);
     else:
-        return ("")
+       return ("")
 
 #prevent script from running if called#
 if __name__ == "__main__":
