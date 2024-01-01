@@ -7,10 +7,11 @@
     You must use the option strict_slashes=False in your route definition
     """
 from flask import Flask
-#instance of Flask
+# instance of Flask
 app = Flask("__name__")
 
-@app.route('/' , strict_slashes=False)
+
+@app.route('/', strict_slashes=False)
 def func_to_display():
     """
     Routing to root, strict_slashes ensure
@@ -19,7 +20,7 @@ def func_to_display():
     return "Hello HBNB!"
 
 
-@app.route('/hbnb/' , strict_slashes=False)
+@app.route('/hbnb/', strict_slashes=False)
 def func_to_hbnb():
     """
     Routing to root, strict_slashes ensure
@@ -27,17 +28,19 @@ def func_to_hbnb():
     """
     return "HBNB"
 
+
 @app.route('/c/<text>', strict_slashes=False)
 def func_to_c(text):
     """
     route to route and a text vallue added
     """
-    #underscore_text = re.sub(r'_', ' ', text)
+    # underscore_text = re.sub(r'_', ' ', text)
     """
     replace underscore wiith a space
-    """ 
+    """
     return "C " + text
 
-#prevent script from running if called#
+
+# prevent script from running if called#
 if __name__ == "__main__":
     app.run("0.0.0.0", port=5000)
