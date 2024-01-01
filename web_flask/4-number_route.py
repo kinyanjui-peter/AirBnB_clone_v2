@@ -43,22 +43,24 @@ def func_to_c(text):
     """
     replace underscore wiith a space
     """ 
-    return "C {}".frormat (text)
+    return "C {}". format (text)
 
-@app.route('/python/', defaults={'text' : 'is_cool'], strict_slashes=False)
+@app.route('/python/', defaults={'text' : 'is_cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def display_python(text=):
+def display_python(text):
     """function that display python"""
     text = text.replace('_',' ')
-    return "Python {}".format(text)
+    return "Python {}". format(text)
 
 @app.route('/number/<n>', strict_slashes=False)
 def display_n(n):
-    if isinstance(int, n):
-        return "{}".format(n);
+    """ A function that displays a number if its an integer"""
+    if isinstance(n, int):
+        """check if the number is int"""
+        return "its interger: {}". format(n)
     else:
-       return ("")
+        return ("")
 
 #prevent script from running if called#
 if __name__ == "__main__":
-    app.run("0.0.0.0", port=5000)
+    app.run("0.0.0.0", port=5000, debug=True)
