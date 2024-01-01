@@ -52,6 +52,13 @@ def display_python(text=):
     text = text.replace('_',' ')
     return "Python {}".format(text)
 
+@app.route('/number/<n>', strict_slashes=False)
+def display_n(n):
+    if isinstance(int, n) == True:
+        return "{}".format(n);
+    else:
+        return ("")
+
 #prevent script from running if called#
 if __name__ == "__main__":
     app.run("0.0.0.0", port=5000)
