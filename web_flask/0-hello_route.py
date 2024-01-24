@@ -7,7 +7,7 @@
     """
 from flask import Flask
 
-app = Flask("__main__")
+app = Flask(__name__)
 """ Flask class object"""
 
 @app.route('/airbnb-onepage/', strict_slashes=False)
