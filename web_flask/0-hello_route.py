@@ -10,7 +10,7 @@ from flask import Flask
 app = Flask("__main__")
 """ Flask class object"""
 
-@app.route('/display' , strict_slashes=False)
+@app.route('/airbnb-onepage/', strict_slashes=False)
 
 def funct_to_display():
     """function that displays Hello HBNB!"""
