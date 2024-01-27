@@ -14,8 +14,8 @@ app = Flask(__name__)
 
 def funct_to_display():
     """function that displays Hello HBNB!"""
-    return "Hello HBNB!"
+    return render_template("5-number.html")
 
 #prevent the script from running when called#
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5001, debug=True)
