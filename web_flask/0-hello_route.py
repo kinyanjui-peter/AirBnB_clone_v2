@@ -10,7 +10,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 """ Flask class object"""
 
-@app.route('/airbnb-onepage/', strict_slashes=False)
+@app.route('/', strict_slashes=False)
 
 def funct_to_display():
     """function that displays Hello HBNB!"""
@@ -18,4 +18,4 @@ def funct_to_display():
 
 #prevent the script from running when called#
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
