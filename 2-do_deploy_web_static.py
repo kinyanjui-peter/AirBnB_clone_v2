@@ -39,7 +39,7 @@ def do_deploy(archivePath):
 
         # Upload the archive to the tmp directory
         put(archivePath, '/tmp/')
-        run(f"sudo mkdir -p {extractedArchivePath}")
+        run(f"sudo mkdir -p /data/web_static/releases/{extractedArchivePath}")
         run(f"sudo tar -xzvf /tmp/{extractedArchivePath}.tgz -C /data/web_static/releases/")
 
         # Remove the uploaded archive
