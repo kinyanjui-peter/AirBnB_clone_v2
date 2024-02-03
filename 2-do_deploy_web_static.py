@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 
-from fabric.api import local
-from fabric import task, put, run, env
+from fabric.api import local, task, put, run, env
 from datetime import datetime
 import os
 
 env.hosts = ["18.209.225.212", "34.207.58.78"]
+env.user = ubuntu
+env.key_filename = ssh -i .ssh/school
+
 
 def do_pack():
     """ generate a content folder"""
