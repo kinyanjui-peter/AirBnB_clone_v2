@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-
+""" do_pack and do_deploy"""
 from fabric.api import local, task, put, run, env
 from datetime import datetime
 import os
-
+"""connection to server"""
 env.hosts = ["18.209.225.212", "34.207.58.78"]
 env.user = ubuntu
 env.key_filename = ssh -i .ssh/school
