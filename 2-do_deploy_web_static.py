@@ -24,33 +24,34 @@ def do_pack():
         return (final)
 
 
+
 def do_deploy(archivePath):
-    """distributes an archive to your web servers"""
+    """Distribute an archive to your web servers"""
     try:
         if not os.path.exists(archivePath):
-            """check if the filepath exixt"""
-            print("False")
+            print("False: Archive file does not exist.")
             return False
-        # extract file from archivepath without filename
+
+        # Extract filename without extension from the archive path
         extractedArchivePath = os.path.splitext(os.path.basename(archivePath))[0]
-    
-        # upload the acrchive to the tmp directory  
+
+        # Upload the archive to the tmp directory
         put(archivePath, '/tmp/')
         run(f"sudo mkdir -p {extractedArchivePath}")
-        run(f"sudo tar -xzvf /tmp/{extractedArchivePath}.tgz -C /data/web_static/releases/extractedArchivePath")
+        run(f"sudo tar -xzvf /tmp/{extractedArchivePath}.tgz -C /data/web_static/releases/")
 
-        # delete the archive from server 
-        run(f"sudo rm {extractedArchivePath}.tgz")
-    
-        # delete symbolic link 
-        run(f"sudo rm -f /data/web_static/current")
-    
-        # create new symbolic link
+        # Remove the uploaded archive
+        run(f"sudo rm /tmp/{extractedArchivePath}.tgz")
+
+        # Remove symbolic link
+        run("sudo rm -f /data/web_static/current")
+
+        # Create new symbolic link
         run(f"sudo ln -s /data/web_static/releases/{extractedArchivePath} /data/web_static/current")
-    
-        print("True")
+
+        print("True: Deployment successful.")
         return True
 
     except Exception as e:
-        print("False")
+        print(f"False: Error during deployment: {e}")
         return False
